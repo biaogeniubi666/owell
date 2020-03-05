@@ -858,22 +858,25 @@ function e555() {
             bottom: '5%'
         },
         tooltip: {
-            padding: 10,
+            padding: 60,
+            fontSize:300,
             backgroundColor: '#222',
             borderColor: '#777',
             borderWidth: 1,
             formatter: function (obj) {
                 var value = obj.value;
-                return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
+                return '<div style=" font-size: 50px;padding-bottom: 30px;margin-bottom: 0px;line-height:60px">'
                     + obj.seriesName + ' ' + value[0] + '日：'
                     + value[7]
-                    + '</div>'
+                   
                     + schema[1].text + '：' + value[1] + '<br>'
                     + schema[2].text + '：' + value[2] + '<br>'
                     + schema[3].text + '：' + value[3] + '<br>'
                     + schema[4].text + '：' + value[4] + '<br>'
                     + schema[5].text + '：' + value[5] + '<br>'
-                    + schema[6].text + '：' + value[6] + '<br>';
+                    + schema[6].text + '：' + value[6] + '<br>'
+                    + '</div>';
+                   
             }
         },
         xAxis: {
@@ -914,65 +917,20 @@ function e555() {
         },
         visualMap: [
             {
-                left: 'right',
-                top: '10%',
-                dimension: 2,
-                min: 0,
-                max: 250,
-                itemWidth: 30,
-                itemHeight: 120,
-                calculable: true,
-                precision: 0.1,
-                text: ['圆形大小：PM2.5'],
-                textGap: 30,
-                textStyle: {
-                    color: '#fff'
-                },
+               
+                min: 800,
+                max: 800,
+               
                 inRange: {
-                    symbolSize: [10, 70]
+                    symbolSize: [100, 100]
                 },
                 outOfRange: {
-                    symbolSize: [10, 70],
+                    symbolSize: [100, 100],
                     color: ['rgba(255,255,255,.2)']
                 },
-                controller: {
-                    inRange: {
-                        color: ['#c23531']
-                    },
-                    outOfRange: {
-                        color: ['#444']
-                    }
-                }
+                
             },
-            {
-                left: 'right',
-                bottom: '5%',
-                dimension: 6,
-                min: 0,
-                max: 50,
-                itemHeight: 120,
-    
-                precision: 0.1,
-                text: ['明暗：二氧化硫'],
-                textGap: 30,
-                textStyle: {
-                    color: '#fff'
-                },
-                inRange: {
-                    colorLightness: [1, 0.5]
-                },
-                outOfRange: {
-                    color: ['rgba(255,255,255,.2)']
-                },
-                controller: {
-                    inRange: {
-                        color: ['#c23531']
-                    },
-                    outOfRange: {
-                        color: ['#444']
-                    }
-                }
-            }
+            
         ],
         series: [
             {
