@@ -4,7 +4,7 @@ $(function () {
     gecharts_1();setInterval(function(){gecharts_1();}, 2000);
     gecharts_2();setInterval(function(){gecharts_2();}, 1500);
     gecharts_3();setInterval(function(){gecharts_3();}, 1500);
-
+    ge555();
 
     function gecharts_1() {
 
@@ -893,6 +893,179 @@ $(function () {
             myChart.resize();
         });
     }
+
+    
+
+function ge555() {
+    var myChart = echarts.init(document.getElementById('ge555'));
+
+    var dataBJ = [
+        [20,55,56,0.46,18,6,8,1," 会议区"],
+        [10,30,56,0.46,18,6,8,1," 休闲区"],
+    
+    ];
+    
+    var dataGZ = [
+        [1,90,56,0.46,18,6,8,1," 办公区"],
+        [15,70,56,0.46,18,6,8,1," 办公区2"],
+
+    ];
+    
+    var dataSH = [
+        [15,45,56,0.46,18,6,8,1," 阳台"],
+        [25,45,56,0.46,18,6,8,1," 茶水间"],
+
+    ];
+    
+    var schema = [
+        {name: '区域x', index: 0, text: ''},
+        {name: '区域t', index: 1, text: ''},
+        {name: '温度', index: 2, text: '温度'},
+        {name: '湿度', index: 3, text: '湿度'},
+        {name: 'PM2.5', index: 4, text: 'PM2.5'},
+        {name: 'CO2', index: 5, text: '二氧化碳（CO2）'},
+        {name: 'VOC', index: 6, text: '可挥发化合物（VOC）'},
+        {name: '甲醛', index: 7, text: '甲醛（CHOH）'},
+        {name: '区域t', index: 8, text: ''},
+    ];
+    
+    
+    var itemStyle = {
+        opacity: 0.8,
+        shadowBlur: 10,
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+    };
+    
+    option = {
+        // backgroundColor: '#404a59',
+        color: [
+            '#dd4444', '#fec42c', '#80F1BE'
+        ],
+        // legend: {
+        //     top: 10,
+        //     data: ['北京', '上海', '广州'],
+        //     textStyle: {
+        //         color: '#fff',
+        //         fontSize: 16
+        //     }
+        // },
+        grid: {
+            left: '5%',
+            right: 150,
+            top: '10%',
+            bottom: '5%'
+        },
+        tooltip: {
+            padding: 60,
+            fontSize:300,
+            backgroundColor: '#222',
+            borderColor: '#777',
+            borderWidth: 1,
+            formatter: function (obj) {
+                var value = obj.value;
+                return '<div style=" font-size: 50px;padding-bottom: 30px;margin-bottom: 0px;line-height:60px">'
+                    +  ' ' + value[8] + ' ：'+ '<br>'
+                                     
+                    + schema[2].text + '：' + value[2] + '<br>'
+                    + schema[3].text + '：' + value[3] + '<br>'
+                    + schema[4].text + '：' + value[4] + '<br>'
+                    + schema[5].text + '：' + value[5] + '<br>'
+                    + schema[6].text + '：' + value[6] + '<br>'
+                    + schema[7].text + '：' + value[7] + '<br>'
+                    + '</div>';
+                   
+            }
+        },
+        xAxis: {
+            type: 'value',
+            name: '日期',
+            nameGap: 16,
+            nameTextStyle: {
+                color: '#fff',
+                fontSize: 14
+            },
+            max: 31,
+            splitLine: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#eee'
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            name: 'AQI指数',
+            nameLocation: 'end',
+            nameGap: 20,
+            nameTextStyle: {
+                color: '#fff',
+                fontSize: 16
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#eee'
+                }
+            },
+            splitLine: {
+                show: false
+            }
+        },
+        visualMap: [
+            {
+               
+                min: 800,
+                max: 800,
+               
+                inRange: {
+                    symbolSize: [100, 100]
+                },
+                outOfRange: {
+                    symbolSize: [100, 100],
+                    color: ['rgba(255,255,255,.2)']
+                },
+                
+            },
+            
+        ],
+        series: [
+            {
+                name: '北京',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataBJ
+            },
+            {
+                name: '上海',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataSH
+            },
+            {
+                name: '广州',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataGZ
+            }
+        ]
+    };
+
+
+
+
+
+
+
+    myChart.setOption(option);
+    window.addEventListener("resize",function(){
+        myChart.resize();
+    });
+
+}
+
 
     //生成从minNum到maxNum的随机数
     function randomNum(minNum,maxNum){

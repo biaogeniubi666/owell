@@ -3,7 +3,7 @@ $(function(){
     szyy_echarts_1();setInterval(function(){szyy_echarts_1();}, 2000);
     szyy_echarts_2();setInterval(function(){szyy_echarts_2();}, 2000);
     szyy_echarts_3();setInterval(function(){szyy_echarts_3();}, 2000);
-
+    se555();
     function szyy_echarts_1() {
 
         var myChart = echarts.init(document.getElementById('szyy_echarts_1'));
@@ -14,24 +14,18 @@ $(function(){
             },
             {
                 value: 5,
-                name: '透明度'
+                name: '浑浊度'
             },
             {
                 value: 15,
-                name: '细菌总数'
+                name: '电导率'
             },
-            {
-                value: 25,
-                name: '气味'
-            },
+          
             {
                 value: 20,
                 name: '残留氯'
-            },
-            {
-                value: 35,
-                name: '颗粒物'
             }
+         
         ]
         option = {
             // backgroundColor:"#0B1837",
@@ -73,7 +67,7 @@ $(function(){
                     fontSize: 24,
                     fontWeight: 'bold'
                 },
-                data: ['PH值', '透明度', '细菌总数', '气味', '残留氯', '颗粒物']
+                data: ['PH值', '浑浊度', '电导率', '残留氯']
             },
             polar: {},
             angleAxis: {
@@ -369,129 +363,348 @@ $(function(){
 
         var myChart = echarts.init(document.getElementById('szyy_echarts_3'));
 
-        var scaleData = [{
-            'name': '谷物',
-            'value': 10
-        },
-        {
-            'name': '蔬果',
-            'value': 20
-        },
-        {
-            'name': '奶制品',
-            'value': 20
-        },
-        {
-            'name': '甜食脂肪',
-            'value': 27
-        },
-        {
-            'name': '肉类豆类',
-            'value': 23
-        }
-        ];
-        var rich = {
-            white: {
-                color: '#fff',
-                align: 'center',
-                padding: [5, 0],
-                fontSize: 24,
-                fontWeight: 'bold',
-            }
-        };
-        var placeHolderStyle = {
-            normal: {
-                label: {
-                    show: false
-                },
-                labelLine: {
-                    show: false
-                },
-                color: 'rgba(0, 0, 0, 0)',
-                borderColor: 'rgba(0, 0, 0, 0)',
-                borderWidth: 0
-            }
-        };
-        var data = [];
-        for (var i = 0; i < scaleData.length; i++) {
-            data.push({
-                value: scaleData[i].value,
-                name: scaleData[i].name,
-                itemStyle: {
-                    normal: {
-                        borderWidth: 9,
-                        shadowBlur: 10,
-                        borderColor: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
-                            offset: 0,
-                            color: '#7777eb'
-                        }, {
-                            offset: 1,
-                            color: '#70ffac'
-                        }]),
-                        shadowColor: 'rgba(142, 152, 241, 0.1)'
-                    }
-                }
-            }, {
-                value: 4,
-                name: '',
-                itemStyle: placeHolderStyle
-            });
-        }
-        var seriesObj = [{
-            name: '',
-            type: 'pie',
-            clockWise: false,
-            radius: [195, 200],
-            hoverAnimation: false,
-            itemStyle: {
-                normal: {
-                    label: {
-                        show: true,
-                        position: 'outside',
-                        color: '#fff',
-                        fontSize: '24',
-                        fontWeight: 'bold',
-                        formatter: function(params) {
-                            var percent = 0;
-                            var total = 0;
-                            for (var i = 0; i < scaleData.length; i++) {
-                                total += scaleData[i].value;
-                            }
-                            percent = ((params.value / total) * 100).toFixed(0);
-                            if(params.name !== '') {
-                                return params.name + '\n{white|' + '占比' + percent + '%}';
-                            }else {
-                                return '';
-                            }
-                        },
-                        rich: rich
-                    },
-                    labelLine: {
-                        show: false
-                    }
-                }
-            },
-            data: data
-        }];
+        var randome81 = [randomNum(5,9),randomNum(5,9),randomNum(5,9),randomNum(5,9),randomNum(5,9),randomNum(5,9),randomNum(5,9)];
         option = {
-            // backgroundColor: '#04243E',
+    
+            grid: {
+                left: '5%',
+                top: '13%',
+                right: '5%',
+                bottom: '7%',
+                containLabel: true
+            },
+    
             tooltip: {
-                show: false
+                trigger: 'axis'
             },
-            legend: {
-                show: false
+    
+            xAxis: [{
+                // name:"分钟前",
+                nameLocation:'center',
+                nameGap:23,
+                nameTextStyle:{
+                    color: "#fff",
+                    fontSize:'24',
+                    fontWeight: 'bold',
+                },
+                type: 'category',
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+                axisLine: {
+                    show: true,
+                 lineStyle: {
+                        color: "rgba(255,255,255,.1)",
+                        width: 1,
+                        type: "solid"
+                    },
+                },
+                axisTick: {
+                    show: false,
+                },
+                axisLabel:  {
+                        interval: 0,
+                       // rotate:50,
+                        show: true,
+                        splitNumber: 15,
+                        textStyle: {
+                            color: "#fff",
+                            fontSize:'24',
+                            fontWeight: 'bold',
+                        },
+                    },
+            }],
+    
+            yAxis: {
+                name:"ph",
+                nameTextStyle:{
+                    color: "#fff",
+                    fontSize:'24',
+                    fontWeight: 'bold',
+                },
+                min:3,
+                max:10,
+                axisLabel: {
+                    //formatter: '{value} %'
+                     show:true,
+                      textStyle: {
+                        color: "#fff",
+                        fontSize:'24',
+                        fontWeight: 'bold',
+                         },
+                 },
+                 axisTick: {
+                    show: false,
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: "rgba(255,255,255,.1)",
+                        width: 1,
+                        type: "solid"
+                    },
+                },
+                splitNumber:0,
+                splitLine: {
+                    show:false,
+                    lineStyle: {
+                        color: 'rgba(255,255,255,.1)',
+                    },
+                },
             },
-            toolbox: {
-                show: false
+    
+            visualMap: {
+                show: false,
+                pieces: [{
+                    gt: 0,
+                    lte: 35,
+                    color: '#096'
+                }, {
+                    gt: 35,
+                    lte: 75,
+                    color: '#ffde33'
+                }, {
+                    gt: 75,
+                    lte: 115,
+                    // color: '#ff9933'
+                    color: '#cc0033'
+                }, {
+                    gt: 115,
+                    lte: 150,
+                    color: '#cc0033'
+                }, {
+                    gt: 150,
+                    lte: 250,
+                    color: '#7e0023'
+                }, {
+                    gt: 250,
+                    color: '#660099'
+                }],
+                outOfRange: {
+                    color: '#999'
+                }
             },
-            series: seriesObj
-        }            
-     
+    
+            series: [{
+                name: 'PM25',
+                type: 'line',
+                smooth: true,
+                data: randome81,
+                lineStyle: {
+                    normal: {
+                        barBorderRadius: 12,
+                        width:10
+                    },
+                },
+    
+                markLine: {
+                    silent: false,
+                    symbol: 'none',
+                    label: {
+                        show:true,
+                        position:'end', // 'start\middle\end'
+                        formatter: '{b}',
+                        color: "#fff",
+                        fontSize:'24',
+                        fontWeight: 'bold',
+                    },
+                    data: [{
+                        name: '重度污染',
+                        yAxis: 250
+                    }, {
+                        name: '中度污染',
+                        yAxis: 150
+    
+                    }, {
+                        name: '最佳',
+                        yAxis: 7.5
+                    }, {
+                        name: '良',
+                        yAxis: 8.5
+                    }, {
+                        name: '良',
+                        yAxis: 6.5
+                    }],
+                    lineStyle:{
+                        color:'#8E8E8E',
+                    },
+                },
+            }],
+        };
         myChart.setOption(option);
         window.addEventListener("resize",function(){
             myChart.resize();
         });
     }
+    
+
+function se555() {
+    var myChart = echarts.init(document.getElementById('se555'));
+
+    var dataBJ = [
+        [20,55,56,0.46,18,6,8,1," 会议区"],
+        [10,30,56,0.46,18,6,8,1," 休闲区"],
+    
+    ];
+    
+    var dataGZ = [
+        [1,90,56,0.46,18,6,8,1," 办公区"],
+        [15,70,56,0.46,18,6,8,1," 办公区2"],
+
+    ];
+    
+    var dataSH = [
+        [15,45,56,0.46,18,6,8,1," 阳台"],
+        [25,45,56,0.46,18,6,8,1," 茶水间"],
+
+    ];
+    
+    var schema = [
+        {name: '区域x', index: 0, text: ''},
+        {name: '区域t', index: 1, text: ''},
+        {name: '温度', index: 2, text: '温度'},
+        {name: '湿度', index: 3, text: '湿度'},
+        {name: 'PM2.5', index: 4, text: 'PM2.5'},
+        {name: 'CO2', index: 5, text: '二氧化碳（CO2）'},
+        {name: 'VOC', index: 6, text: '可挥发化合物（VOC）'},
+        {name: '甲醛', index: 7, text: '甲醛（CHOH）'},
+        {name: '区域t', index: 8, text: ''},
+    ];
+    
+    
+    var itemStyle = {
+        opacity: 0.8,
+        shadowBlur: 10,
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+    };
+    
+    option = {
+        // backgroundColor: '#404a59',
+        color: [
+            '#dd4444', '#fec42c', '#80F1BE'
+        ],
+        // legend: {
+        //     top: 10,
+        //     data: ['北京', '上海', '广州'],
+        //     textStyle: {
+        //         color: '#fff',
+        //         fontSize: 16
+        //     }
+        // },
+        grid: {
+            left: '5%',
+            right: 150,
+            top: '10%',
+            bottom: '5%'
+        },
+        tooltip: {
+            padding: 60,
+            fontSize:300,
+            backgroundColor: '#222',
+            borderColor: '#777',
+            borderWidth: 1,
+            formatter: function (obj) {
+                var value = obj.value;
+                return '<div style=" font-size: 50px;padding-bottom: 30px;margin-bottom: 0px;line-height:60px">'
+                    +  ' ' + value[8] + ' ：'+ '<br>'
+                                     
+                    + schema[2].text + '：' + value[2] + '<br>'
+                    + schema[3].text + '：' + value[3] + '<br>'
+                    + schema[4].text + '：' + value[4] + '<br>'
+                    + schema[5].text + '：' + value[5] + '<br>'
+                    + schema[6].text + '：' + value[6] + '<br>'
+                    + schema[7].text + '：' + value[7] + '<br>'
+                    + '</div>';
+                   
+            }
+        },
+        xAxis: {
+            type: 'value',
+            name: '日期',
+            nameGap: 16,
+            nameTextStyle: {
+                color: '#fff',
+                fontSize: 14
+            },
+            max: 31,
+            splitLine: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#eee'
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            name: 'AQI指数',
+            nameLocation: 'end',
+            nameGap: 20,
+            nameTextStyle: {
+                color: '#fff',
+                fontSize: 16
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#eee'
+                }
+            },
+            splitLine: {
+                show: false
+            }
+        },
+        visualMap: [
+            {
+               
+                min: 800,
+                max: 800,
+               
+                inRange: {
+                    symbolSize: [100, 100]
+                },
+                outOfRange: {
+                    symbolSize: [100, 100],
+                    color: ['rgba(255,255,255,.2)']
+                },
+                
+            },
+            
+        ],
+        series: [
+            {
+                name: '北京',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataBJ
+            },
+            {
+                name: '上海',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataSH
+            },
+            {
+                name: '广州',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataGZ
+            }
+        ]
+    };
+
+
+
+
+
+
+
+    myChart.setOption(option);
+    window.addEventListener("resize",function(){
+        myChart.resize();
+    });
+
+}
+
 
     //生成从minNum到maxNum的随机数
     function randomNum(minNum,maxNum){

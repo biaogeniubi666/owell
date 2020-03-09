@@ -28,8 +28,432 @@ kecharts_3();setInterval(function(){kecharts_3();}, randomNum(2000,7000));
 kecharts_4();setInterval(function(){kecharts_4();}, randomNum(2000,7000));
 kecharts_5();setInterval(function(){kecharts_5();}, randomNum(2000,7000));
 kecharts_6();setInterval(function(){kecharts_6();}, randomNum(2000,7000));
+kecharts_7();setInterval(function(){kecharts_7();}, randomNum(2000,7000));
+ke555();
 
 // --------------- echart图表 -----------------//
+function kecharts_7() {
+
+    var myChart = echarts.init(document.getElementById('kechart7'));
+
+    var randomdata = [randomNum(25,29), randomNum(40,70), randomNum(20,90), randomNum(20,90), randomNum(0,15), randomNum(1,5)];
+    // var randomdata = data;
+
+    var radius = ['45%', '40%'];
+
+    option = {
+
+        series: [
+            {
+                name: '温度',
+                type: 'pie',
+                radius: radius,
+                center: ['15%', '25%'],
+                startAngle: 225,
+                color: [new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#FDFF5C'
+                }, {
+                    offset: 1,
+                    color: '#F2F5A9'
+                }]), "transparent"],
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                label: {
+                        normal: {
+                            position: 'center'
+                        }
+                    },
+                data: [{
+                    value: 75,
+                     name: '温度',
+                        label: {
+                            normal: {
+                                formatter: '温度',
+                                textStyle: {
+                                    color: '#EFFBFB',
+                                    fontSize: 24,
+                                }
+                            }
+                        }
+                },
+                {
+                    value: randomdata[0],
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '\n\n{c0}',
+                                textStyle: {
+                                    color: '#FDFF5C',
+                                    fontSize: 24,
+                                }
+                            }
+                        }
+                },
+                {
+                    value: 0,
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '',
+                                textStyle: {
+                                    color: '#EFFBFB',
+                                    fontSize: 24,
+
+                                }
+                            }
+                        }
+                }],
+            },
+
+            {
+                name: '湿度',
+                type: 'pie',
+                radius: radius,
+                center: ['50%', '25%'],
+                startAngle: 225,
+                color: [new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#9FE6B8'
+                }, {
+                    offset: 1,
+                    color: '#32C5E9'
+                }]), "transparent"],
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                label: {
+                        normal: {
+                            position: 'center'
+                        }
+                    },
+                data: [{
+                    value: 75,
+                     name: '湿度',
+                        label: {
+                            normal: {
+                                formatter: '湿度',
+                                textStyle: {
+                                    color: '#FFFFFF',
+                                    fontSize: 24,
+                                }
+                            }
+                        }
+                },
+                {
+                    value: randomdata[1],
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '\n\n{c0}',
+                                textStyle: {
+                                    color: '#9FE6B8',
+                                    fontSize: 24,
+
+                                }
+                            }
+                        }
+                },
+                {
+                    value: 0,
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '',
+                                textStyle: {
+                                    color: '#FFFFFF',
+                                    fontSize: 24,
+
+                                }
+                            }
+                        }
+                }]
+            },
+
+            {
+                name: '甲醛',
+                type: 'pie',
+                radius: radius,
+                center: ['85%', '25%'],
+                startAngle: 225,
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                label: {
+                        normal: {
+                            position: 'center'
+                        }
+                    },
+                data: [{
+                    value: 75,
+                    "itemStyle": {
+                        "normal": {
+                            "color": new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                "offset": 0,
+                                "color": '#FF9F7F'
+                            }, {
+                                "offset": 1,
+                                "color": '#FB7293'
+                            }]),
+                        }
+                    },
+                     name: '甲醛',
+                        label: {
+                            normal: {
+                                formatter: '甲醛',
+                                textStyle: {
+                                    color: '#ffff',
+                                    fontSize: 24
+
+                                }
+                            }
+                        }
+                }, {
+                    value: randomdata[2],
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '\n\n{c0}',
+                                textStyle: {
+                                    color: '#FF9F7F',
+                                    fontSize: 24,
+
+                                }
+                            }
+                        }
+                },
+                {
+                    value: 0,
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '',
+                                textStyle: {
+                                    color: '#fff',
+                                    fontSize: 24,
+
+                                }
+                            }
+                        }
+                }]
+            },
+            // 下一行3个
+            {
+                name: 'PM2.5',
+                type: 'pie',
+                radius: radius,
+                center: ['15%', '75%'],
+                startAngle: 225,
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                label: {
+                        normal: {
+                            position: 'center',
+                            formatter: 'PM2.5',
+                            textStyle: {
+                                color: '#ffff',
+                                fontSize: 24
+                            }
+                        }
+                    },
+                data: [
+                    {
+                    value: 75,
+                    "itemStyle": {
+                        "normal": {
+                            "color": new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                "offset": 0,
+                                "color": '#A9A9F5'
+                            }, {
+                                "offset": 1,
+                                "color": '#8258FA'
+                            }]),
+                        }
+                    },
+                    name: 'PM2.5'
+                },
+                {
+                    value: randomdata[3],
+                    name: '%',
+                    label: {
+                        formatter: '\n\n{c0}',
+                        textStyle: {
+                            color: '#A9A9F5',
+                            fontSize: 24,
+                            },
+                    }
+                },
+                {
+                    value: 0,
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '',
+                                textStyle: {
+                                    color: '#FAFAFA',
+                                    fontSize: 24,
+
+                                }
+                            }
+                        }
+                }
+            ]
+            },
+
+            {
+                name: 'CO2 浓度',
+                type: 'pie',
+                radius: radius,
+                center: ['50%', '75%'],
+                startAngle: 225,
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                label: {
+                        normal: {
+                            position: 'center'
+                        }
+                    },
+                data: [{
+                    value: 75,
+                    "itemStyle": {
+                        "normal": {
+                            "color": new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                "offset": 0,
+                                "color": '#0080FF'
+                            }, {
+                                "offset": 1,
+                                "color": '#00FFFF'
+                            }]),
+                        }
+                    },
+                     name: 'CO2 浓度',
+                        label: {
+                            normal: {
+                                formatter: 'CO2 浓度',
+                                textStyle: {
+                                    color: '#ffff',
+                                    fontSize: 24
+
+                                }
+                            }
+                        }
+                }, {
+                    value: randomdata[4],
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '\n\n{c0}',
+                                textStyle: {
+                                    color: '#00FFFF',
+                                    fontSize: 24
+
+                                }
+                            }
+                        }
+                },
+                {
+                    value: 0,
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '',
+                                textStyle: {
+                                    color: '#ffff',
+                                    fontSize: 24
+
+                                }
+                            }
+                        }
+                }]
+            },
+
+            {
+                name: 'VOC',
+                type: 'pie',
+                radius: radius,
+                center: ['85%', '75%'],
+                startAngle: 225,
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                label: {
+                        normal: {
+                            position: 'center'
+                        }
+                    },
+                data: [
+                    {
+                    value: 75,
+                    "itemStyle": {
+                        "normal": {
+                            "color": new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                "offset": 0,
+                                "color": '#04B486'
+                            }, {
+                                "offset": 1,
+                                "color": '#01DFD7'
+                            }]),
+                        }
+                    },
+
+                    label: {
+                        normal: {
+                            formatter: '可挥发化合物',
+                            textStyle: {
+                                color: '#04B486',
+                                fontSize: 24,
+                                }
+                        }
+                    }
+                }, 
+                {
+                    value: randomdata[5],
+                    name: '%',
+                    label: {
+                        formatter: '\n\n{c0}',
+                        textStyle: {
+                            color: '#00BFFF',
+                            fontSize: 24,
+                            },
+                    }
+                },
+                {
+                    value: 0,
+                    name: '%',
+                        label: {
+                            normal: {
+                                formatter: '',
+                                textStyle: {
+                                    color: '#fff',
+                                    fontSize: 24,
+                                }
+                            }
+                        }
+                }]
+            },
+        ]
+    };
+    myChart.setOption(option);
+    window.addEventListener("resize",function(){
+        myChart.resize();
+    });
+}
+
 function kecharts_0() {
 
     var myChart = echarts.init(document.getElementById('kechart0'));
@@ -1372,6 +1796,182 @@ function kecharts_6() {
         myChart.resize();
     });
 }
+
+
+
+function ke555() {
+    var myChart = echarts.init(document.getElementById('ke555'));
+
+    var dataBJ = [
+        [20,55,56,0.46,18,6,8,1," 会议区"],
+        [10,30,56,0.46,18,6,8,1," 休闲区"],
+    
+    ];
+    
+    var dataGZ = [
+        [1,90,56,0.46,18,6,8,1," 办公区"],
+        [15,70,56,0.46,18,6,8,1," 办公区2"],
+
+    ];
+    
+    var dataSH = [
+        [15,45,56,0.46,18,6,8,1," 阳台"],
+        [25,45,56,0.46,18,6,8,1," 茶水间"],
+
+    ];
+    
+    var schema = [
+        {name: '区域x', index: 0, text: ''},
+        {name: '区域t', index: 1, text: ''},
+        {name: '温度', index: 2, text: '温度'},
+        {name: '湿度', index: 3, text: '湿度'},
+        {name: 'PM2.5', index: 4, text: 'PM2.5'},
+        {name: 'CO2', index: 5, text: '二氧化碳（CO2）'},
+        {name: 'VOC', index: 6, text: '可挥发化合物（VOC）'},
+        {name: '甲醛', index: 7, text: '甲醛（CHOH）'},
+        {name: '区域t', index: 8, text: ''},
+    ];
+    
+    
+    var itemStyle = {
+        opacity: 0.8,
+        shadowBlur: 10,
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+    };
+    
+    option = {
+        // backgroundColor: '#404a59',
+        color: [
+            '#dd4444', '#fec42c', '#80F1BE'
+        ],
+        // legend: {
+        //     top: 10,
+        //     data: ['北京', '上海', '广州'],
+        //     textStyle: {
+        //         color: '#fff',
+        //         fontSize: 16
+        //     }
+        // },
+        grid: {
+            left: '5%',
+            right: 150,
+            top: '10%',
+            bottom: '5%'
+        },
+        tooltip: {
+            padding: 60,
+            fontSize:300,
+            backgroundColor: '#222',
+            borderColor: '#777',
+            borderWidth: 1,
+            formatter: function (obj) {
+                var value = obj.value;
+                return '<div style=" font-size: 50px;padding-bottom: 30px;margin-bottom: 0px;line-height:60px">'
+                    +  ' ' + value[8] + ' ：'+ '<br>'
+                                     
+                    + schema[2].text + '：' + value[2] + '<br>'
+                    + schema[3].text + '：' + value[3] + '<br>'
+                    + schema[4].text + '：' + value[4] + '<br>'
+                    + schema[5].text + '：' + value[5] + '<br>'
+                    + schema[6].text + '：' + value[6] + '<br>'
+                    + schema[7].text + '：' + value[7] + '<br>'
+                    + '</div>';
+                   
+            }
+        },
+        xAxis: {
+            type: 'value',
+            name: '日期',
+            nameGap: 16,
+            nameTextStyle: {
+                color: '#fff',
+                fontSize: 14
+            },
+            max: 31,
+            splitLine: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#eee'
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            name: 'AQI指数',
+            nameLocation: 'end',
+            nameGap: 20,
+            nameTextStyle: {
+                color: '#fff',
+                fontSize: 16
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#eee'
+                }
+            },
+            splitLine: {
+                show: false
+            }
+        },
+        visualMap: [
+            {
+               
+                min: 800,
+                max: 800,
+               
+                inRange: {
+                    symbolSize: [100, 100]
+                },
+                outOfRange: {
+                    symbolSize: [100, 100],
+                    color: ['rgba(255,255,255,.2)']
+                },
+                
+            },
+            
+        ],
+        series: [
+            {
+                name: '北京',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataBJ
+            },
+            {
+                name: '上海',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataSH
+            },
+            {
+                name: '广州',
+                type: 'scatter',
+                itemStyle: itemStyle,
+                data: dataGZ
+            }
+        ]
+    };
+
+
+
+
+
+
+
+    myChart.setOption(option);
+    window.addEventListener("resize",function(){
+        myChart.resize();
+    });
+
+}
+
+
+
+
 /*
 
 

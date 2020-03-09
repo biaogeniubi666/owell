@@ -12,10 +12,7 @@
 
 
     {{--coxno   用来加载51vr --}}
-    <div class="boxno">
-        <div class="allnav" id="player"></div>
-    </div>
-
+  
 
     {{--maincontain 用于加载echart--}}
     <div class="maincontain maincontain_zhuye">
@@ -27,19 +24,19 @@
             <div class="col-xs-12 col-sm-3" style="padding-left:0px; padding-right: 0px">
 
                 <div class="boxall">
-                    <div class="alltitle">空气</div>
+                    <div class="alltitle">空气实时数据</div>
                     <div class="allnav" id="e111"></div>
                     <div class="boxfoot"></div>
                 </div>
 
                 <div class="boxall">
-                    <div class="alltitle">水</div>
+                    <div class="alltitle">水 PH值</div>
                     <div class="allnav" id="e222"></div>
                     <div class="boxfoot"></div>
                 </div>
 
                 <div class="boxall">
-                    <div class="alltitle">营养</div>
+                    <div class="alltitle">可挥发化合物浓度（VOC）</div>
                     <div class="allnav" id="e444"></div>
                     <div class="boxfoot"></div>
                 </div>
@@ -47,62 +44,16 @@
 
 
                 <div class="boxall">
-                    <div class="alltitle">交互指令</div>
-                    <div class="sysw">
-                        <button
-                        class="changjingqiehuan btn-success center-block btn-sm ">
-                        <p style="font-size:5rem;">场景</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="light button-3d button-primary center-block btn-sm ">
-                        <p style="font-size:5rem;">灯光</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="heatmap btn-success center-block btn-sm ">
-                        <p style="font-size:5rem;">热力</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="curtains btn-primary center-block btn-sm ">
-                        <p style="font-size:5rem;">窗帘</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="roam btn-primary center-block btn-sm ">
-                        <p style="font-size:5rem;">漫游</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="freshair btn-primary center-block btn-sm ">
-                        <p style="font-size:5rem;">新风</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="airpoi btn-primary center-block btn-sm ">
-                        <p style="font-size:5rem;">空气</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="dianji btn-primary center-block btn-sm ">
-                        <p style="font-size:5rem;">测试</p>
-                        </button>
-                    </div>
+                    <div class="alltitle">C02浓度</div>
+                    <div class="allnav"id="ec02"></div>
+                  
                     <div class="boxfoot"></div>
 
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-6">
-                <style type="text/css">#backImg{background: url("/img/owell2dd.png");}</style>
+                <style type="text/css">#backImg{background: url("/img/oweld2dd.png");}</style>
                 {{-- 此处height可以调整3d框图的高度 --}}
                 <div class="boxall_3d" id="backImg" style="width:100%; height:97.5%; background-size:100%; -moz-background-size:100%; background-repeat: no-repeat;">
                     <div class="alltitle">全景地图</div>
@@ -115,19 +66,19 @@
 
 
                 <div class="boxallright">
-                    <div class="alltitle">光强</div>
+                    <div class="alltitle">舒适度</div>
                     <div class="allnav" id="e666"></div>
                     <div class="boxfoot"></div>
                 </div>
 
                 <div class="boxallright">
-                    <div class="alltitle">健身</div>
+                    <div class="alltitle">消毒记录</div>
                     <div class="allnav" id="e777"></div>
                     <div class="boxfoot"></div>
                 </div>
 
                 <div class="boxallright">
-                    <div class="alltitle">舒适</div>
+                    <div class="alltitle">声音强度</div>
                     <div class="allnav" id="e888"></div>
                     <div class="boxfoot"></div>
                 </div>
@@ -152,7 +103,7 @@
             <div class="col-xs-12 col-sm-3">
 
                 <div class="boxall">
-                    <div class="alltitle">实时数据</div>
+                    <div class="alltitle">室内实时数据</div>
                     <div class="allnav" id="kechart0"></div>
                     <div class="boxfoot"></div>
                 </div>
@@ -178,10 +129,22 @@
             </div>
 
             <div class="col-xs-12 col-sm-6">
+            <style type="text/css">#backImg{background: url("/img/owell2dd.png");}</style>
+                {{-- 此处height可以调整3d框图的高度 --}}
+                <div class="boxall_3d" id="backImg" style="width:100%; height:97.5%; background-size:100%; -moz-background-size:100%; background-repeat: no-repeat;">
+                    <div class="alltitle">全景地图</div>
+                    <div class="allnav3d" id="ke555"></div>
+                    <div class="boxfoot"></div>
+                </div> 
             </div>
-
+            
 
             <div class="col-xs-12 col-sm-3">
+               <div class="boxall">
+                    <div class="alltitle">室外实时数据</div>
+                    <div class="allnav" id="kechart7"></div>
+                    <div class="boxfoot"></div>
+                </div>
                 <div class="boxall">
                     <div class="alltitle">温度</div>
                     <div class="allnav" id="kechart4"></div>
@@ -200,34 +163,7 @@
                     <div class="boxfoot"></div>
                 </div>
 
-                <div class="boxall">
-                    <div class="alltitle">新风控制</div>
-                    <div class="sysw">
-                        <button
-                        class="kq_kongtiao btn-success center-block btn-sm ">
-                        <p style="font-size:5rem;">空调</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="kq_xinfeng button-3d button-primary center-block btn-sm ">
-                        <p style="font-size:5rem;">新风</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="kq_airpoi btn-primary center-block btn-sm">
-                        <p style="font-size:5rem;">poi</p>
-                        </button>
-                    </div>
-                    <div class="sysw">
-                        <button
-                        class="kq_reli btn-primary center-block btn-sm ">
-                        <p style="font-size:5rem;">热力</p>
-                        </button>
-                    </div>
-                    <div class="boxfoot"></div>
-                </div>
+            
             </div>
 
         </div>
@@ -316,17 +252,21 @@
 
             </div>
 
-            <div class="col-xs-12 col-sm-9">
+            <div class="col-xs-12 col-sm-6">
+                <style type="text/css">#backImg{background: url("/img/owell2dd.png");}</style>
+                {{-- 此处height可以调整3d框图的高度 --}}
+                <div class="boxall_3d" id="backImg" style="width:100%; height:97.5%; background-size:100%; -moz-background-size:100%; background-repeat: no-repeat;">
+                    <div class="alltitle">全景地图</div>
+                    <div class="allnav3d" id="ge555"></div>
+                    <div class="boxfoot"></div>
+                </div> 
             </div>
-
+            <div class="col-xs-12 col-sm-3">
+        <div class="boxall">
+            <div class="alltitle">实时光强</div>
+            <div class="allnav" id="shushi_echart_3"></div>
+            <div class="boxfoot"></div>
         </div>
-
-    </div>
-
-    <div class="maincontain maincontain_shushi">
-
-<div class="row" style="padding-right: 0px; padding-left:0px; margin-left:9.5px; margin-right:9.5px;">
-    <div class="col-xs-12 col-sm-3">
 
         <div class="boxall">
             <div class="alltitle">实时舒适度</div>
@@ -341,11 +281,7 @@
             <div class="boxfoot"></div>
         </div>
 
-        <div class="boxall">
-            <div class="alltitle">舒适度热词分析</div>
-            <div class="allnav" id="shushi_echart_3"></div>
-            <div class="boxfoot"></div>
-        </div>
+        
 
 
         <div class="boxall">
@@ -366,17 +302,20 @@
 
 
             <div class="boxfoot"></div>
-        </div>
 
+            </div> </div>
 
+       
+    </div>
     </div>
 
-    <div class="col-xs-12 col-sm-9">
-    </div>
 
-</div>
+           
 
-</div>
+
+
+
+
 
 <div class="maincontain maincontain_szyy">
 
@@ -398,7 +337,7 @@
         </div>
 
         <div class="boxall">
-            <div class="alltitle">今日菜品营养结构</div>
+            <div class="alltitle">水 PH值</div>
             <div class="allnav" id="szyy_echarts_3"></div>
             <div class="boxfoot"></div>
         </div>
@@ -423,17 +362,70 @@
 
             <div class="boxfoot"></div>
         </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+                <style type="text/css">#backImg{background: url("/img/owell2dd.png");}</style>
+                {{-- 此处height可以调整3d框图的高度 --}}
+                <div class="boxall_3d" id="backImg" style="width:100%; height:97.5%; background-size:100%; -moz-background-size:100%; background-repeat: no-repeat;">
+                    <div class="alltitle">全景地图</div>
+                    <div class="allnav3d" id="se555"></div>
+                    <div class="boxfoot"></div>
+                </div> 
+        </div>
+
+            <div class="col-xs-12 col-sm-3">
+
+<div class="boxall">
+    <div class="alltitle">红外测温门禁实时数据</div>
+    <div class="allnav" id="kangyi_echarts_0"></div>
+    <div class="boxfoot"></div>
+</div>
+
+<div class="boxall">
+    <div class="alltitle">消毒时长管理</div>
+        <div class="allnav" id="kangyi_echarts_1">    
+    </div>
+    <div class="boxfoot"></div>
+</div>
+
+<div class="boxall">
+    <div class="alltitle">会议管理</div>
+    <div class="allnav" id="kangyi_echarts_2"></div>
+    <div class="boxfoot"></div>
+</div>
 
 
+<div class="boxall">
+    <div class="alltitle">舒适交互</div>
+    <div class="sysw">
+        <a type="button"
+        class="btn btn-primary center-block btn-sm" >
+        <p style="font-size:5rem;">总开关</p>
+        </a>
+    </div>
+    <div class="sysw">
+        <a type="button"
+        class="btn btn-primary center-block btn-sm"
+        aria-label="Right Align">
+        <p style="font-size:5rem;">AUTO</p>
+        </a>
     </div>
 
-    <div class="col-xs-12 col-sm-9">
-    </div>
 
+    <div class="boxfoot"></div>
 </div>
 
 </div>
 
+
+
+
+
+</div>
+
+</div>
+<!-- 
 <div class="maincontain maincontain_kangyi">
 <div class="row" style="padding-right: 0px; padding-left:0px; margin-left:9.5px; margin-right:9.5px;">
     <div class="col-xs-12 col-sm-3">
@@ -480,6 +472,12 @@
 
 
     </div>
+
+
+
+
+
+
 
     <div class="col-xs-12 col-sm-6">
     </div>
@@ -562,7 +560,7 @@ uiduck.setOptions({
 });
 </script>
 
-
+ -->
 
 
 

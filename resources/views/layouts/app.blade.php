@@ -15,6 +15,7 @@
   <script type="text/javascript" src="js/echarts-liquidfill.min.js"></script>
   <script type="text/javascript" src="js/echarts-wordcloud.min.js"></script>  
   <script type="text/javascript" src="js/superAPI-2.6.0-owell.min.js"></script>
+ 
   <script language="Javascript" src="js/uiduck.js"></script>
   <script language="Javascript" src="js/json2.js"></script>
   <!-- Styles -->
@@ -31,11 +32,21 @@
 
 <body >
 
- <div class="container-fulid">
+
+ <div class="container-fulid" >
+
+  <canvas id="canvas"></canvas> 
+
+<!-----HEADER END-----> 
+<!--用来解决视频右键菜单，用于视频上面的遮罩层 START-->
+<div class="videozz"></div>
     @include('layouts._header')
 
+    
 
+   
     @yield('content')
+   
 
     @include('layouts._footer')
 </div>
@@ -47,7 +58,7 @@
   <script src="{{ mix('js/app.js') }}"></script>
   <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
   <script type="text/javascript" src="js/js.js"></script>
-  <script type="text/javascript" src="js/51vr.js"></script>
+  <!-- <script type="text/javascript" src="js/51vr.js"></script> -->
   <script type="text/javascript" src="js/let.js"></script>
 
   <script src="js/ai.js"></script>
@@ -55,6 +66,7 @@
 
 
 
+  <script src="js/bg.js" type="text/javascript"></script>
   <script type="text/javascript" src="js/charts/show.js"></script>
   <script type="text/javascript" src="js/charts/guangqiang.js"></script>
   <script type="text/javascript" src="js/charts/kongqi.js"></script>

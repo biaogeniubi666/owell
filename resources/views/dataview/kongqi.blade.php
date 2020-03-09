@@ -1,137 +1,36 @@
-@extends('layouts.app')
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-@section('title')
+<link href="css/index_style.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js" type="text/javascript"></script>
 
-@section('content')
-
-
-
-    <div class="row" style="padding-right: 0px; padding-left:0px; margin-left:9.5px; margin-right:9.5px;">
-        <div class="col-xs-12 col-sm-3">
-
-            <div class="boxno">
-                <div class="allnav" id="player" style="display:none;"></div>
-            </div>
-
-            <div class="boxall">
-                <div class="alltitle">  空气实时数据 </div>
-                <div class="allnav" id="kechart7">
-
-                    <div class="barbox3">
-                    <ul class="clearfix">
-                        <li class="pulll_left counter">25℃</li>
-                        <li class="pulll_left counter">40%</li>
-                        <li class="pulll_left counter">50ppm</li>
-                        <li class="pulll_left counter">300ppm</li>
-                    </ul>
-                    </div>
-
-                    <div class="barbox4">
-                    <ul class="clearfix">
-                    <li class="pulll_left">温度</li>
-                    <li class="pulll_left">湿度</li>
-                    <li class="pulll_left">PM2.5</li>
-                    <li class="pulll_left">二氧化碳浓度</li>
-                    </ul>
-                    </div>
-
-
-                    <div class="barbox3">
-                    <ul class="clearfix">
-                        <li class="pulll_left counter">20ppm</li>
-                        <li class="pulll_left counter">300ppm
-                        </li>
-                        <li class="pulll_left counter" id="tmp">30db</li>
-                        <li class="pulll_left counter" id="hum">300lux</li>
-                    </ul>
-                    </div>
-                    <div class="barbox4">
-                    <ul class="clearfix">
-                        <li class="pulll_left">甲醛浓度</li>
-                        <li class="pulll_left">空气可挥发物</li>
-                        <li class="pulll_left">声音强度</li>
-                        <li class="pulll_left">光照强度</li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="boxfoot"></div>
-            </div>
-
-            <div class="boxall">
-                <div class="alltitle">二氧化碳</div>
-                <div class="allnav" id="kechart1"></div>
-                <div class="boxfoot"></div>
-            </div>
-
-            <div class="boxall">
-                <div class="alltitle">可挥发化合物</div>
-                <div class="allnav" id="kechart2"></div>
-                <div class="boxfoot"></div>
-            </div>
-
-            <div class="boxall">
-                <div class="alltitle">湿度</div>
-                <div class="allnav" id="kechart3"></div>
-                <div class="boxfoot"></div>
-            </div>
-
-        </div>
-
-        <div class="col-xs-12 col-sm-6">
-        {{-- <div class="boxall_3d">
-                <div class="alltitle">全景地图</div>
-                <div class="allnav">
-
-                <img src="/img/东田三层.png"    style="position: relative;width:100%;height:100%;opacity:0.4">
-                </div>
-                <div class="boxfoot"></div>
-            </div> --}}
-        </div>
-
-
-        <div class="col-xs-12 col-sm-3">
-            <div class="boxall">
-                <div class="alltitle">温度</div>
-                <div class="allnav" id="kechart4"></div>
-                <div class="boxfoot"></div>
-            </div>
-
-            <div class="boxall">
-                <div class="alltitle">PM2.5</div>
-                <div class="allnav" id="kechart5"></div>
-                <div class="boxfoot"></div>
-            </div>
-
-            <div class="boxall">
-                <div class="alltitle">甲醛</div>
-                <div class="allnav" id="kechart6"></div>
-                <div class="boxfoot"></div>
-            </div>
-
-            <div class="boxall">
-                <div class="alltitle">新风控制</div>
-                <div class="sysw">
-                    <button 
-                    class="fushi btn-success center-block btn-sm ">
-                    <p style="font-size:5rem;">总开关</p>
-                    </button>
-                </div>
-                <div class="sysw">
-                    <button 
-                    class="light btn-success center-block btn-sm ">
-                    <p style="font-size:5rem;">auto</p>
-                    </button>
-                </div>
-                <div class="boxfoot"></div>
-            </div>
-        </div>
+</head>
 
 
 
 
 
+
+
+
+
+
+
+
+<!--效果html开始-->
+<div class="header" id="demo">
+<div class="canvaszz"> </div>
+  <canvas id="canvas"></canvas>
+</div>
+<!-----HEADER END-----> 
+<!--用来解决视频右键菜单，用于视频上面的遮罩层 START-->
+<div class="videozz"></div>
+<!--用来解决视频右键菜单，用于视频上面的遮罩层 END--> 
 
 </div>
 
-
-@stop
+<script src="js/bg.js" type="text/javascript"></script>
+</body>
+</html>
